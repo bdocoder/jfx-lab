@@ -13,33 +13,33 @@ import javafx.stage.Stage;
  */
 public class Lab2 extends Application {
 
-    double spacing = 10;
+  double spacing = 10;
 
-    @Override
-    public void start(Stage stage) {
-        TextField tf = new TextField();
+  @Override
+  public void start(Stage stage) {
+    TextField tf = new TextField();
 
-        Button submitButton = new Button("Submit");
-        Button cancelButton = new Button("Cancel");
+    Button submitButton = new Button("Submit");
+    Button cancelButton = new Button("Cancel");
 
-        submitButton.setOnMouseClicked(e -> System.out.println(tf.getText()));
-        cancelButton.setOnMouseClicked(e -> stage.close());
+    submitButton.setOnMouseClicked(e -> System.out.println(tf.getText()));
+    cancelButton.setOnMouseClicked(e -> stage.close());
 
-        HBox hBox = new HBox(submitButton, cancelButton);
-        VBox vBox = new VBox(tf, hBox);
+    HBox hBox = new HBox(submitButton, cancelButton);
+    VBox vBox = new VBox(tf, hBox);
 
-        hBox.setAlignment(Pos.CENTER);
-        vBox.setSpacing(spacing);
-        hBox.setSpacing(spacing);
-        vBox.setPadding(new Insets(spacing * 2));
+    hBox.setAlignment(Pos.CENTER);
+    vBox.setSpacing(spacing);
+    hBox.setSpacing(spacing);
+    vBox.setPadding(new Insets(spacing * 2));
 
-        Scene scene = new Scene(vBox);
-        stage.setScene(scene);
-        stage.show();
-    }
+    Scene scene = new Scene(vBox);
+    stage.setScene(scene);
+    stage.show();
+  }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+  public static void main(String[] args) {
+    launch(args);
+  }
 
 }
