@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 public class Lab5 extends Application {
   double spacing = 10;
   GridPane pane;
+  double buttonWidth = spacing * 4;
   Font monoFont = new Font("monospace", 16);
   Font monoFontSmall = new Font("monospace", 12);
 
@@ -28,7 +29,9 @@ public class Lab5 extends Application {
     Button button = new Button(text);
     button.setAlignment(Pos.CENTER);
     button.setFont(monoFontSmall);
-    button.setPrefSize(spacing * 4, spacing * 4);
+    double finalWidth = buttonWidth + (colSpan - 1) * (buttonWidth + spacing);
+    double finalHeight = buttonWidth + (rowSpan - 1) * (buttonWidth + spacing);
+    button.setPrefSize(finalWidth, finalHeight);
     button.setBackground(new Background(new BackgroundFill(bgColor, null, null)));
     button.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, null, null)));
     pane.add(button, col, row, colSpan, rowSpan);
