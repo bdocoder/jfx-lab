@@ -22,9 +22,9 @@ public class Lab1 extends Application {
       for (int col = 0; col < 9; col++) {
         // from 0 to 7 are the squares
         // 8 is the text
-        if (row == 8 || col == 8) {
-          char c = col < 8 ? "ABCDEFGH".charAt(col) : row < 8 ? "12345678".charAt(row) : '\0';
-          Text text = new Text((c) + "");
+        if (row == 8 ^ col == 8) {
+          char c = (row < 8 ? "12345678".charAt(row) : "ABCDEFGH".charAt(col));
+          Text text = new Text(c + "");
           text.setFont(textFont);
           gp.add(text, col, row);
           continue;
