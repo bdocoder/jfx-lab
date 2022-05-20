@@ -22,6 +22,8 @@ public class Lab1 extends Application {
       for (int col = 0; col < 9; col++) {
         // from 0 to 7 are the squares
         // 8 is the text
+        // the ^ operator means the two conditions cannot be true at the same time
+        // for example, true ^ true is false, but true ^ false is true
         if (row == 8 ^ col == 8) {
           char c = (row < 8 ? "12345678".charAt(row) : "ABCDEFGH".charAt(col));
           Text text = new Text(c + "");
